@@ -1,0 +1,44 @@
+clear all
+clc
+addpath(genpath('./external'));
+%% Load raw data
+twix_344=mapVBVD(344);
+twix_347=mapVBVD(347);
+%% get dimensions and signals
+raw_data_MID344=twix_344.image.unsorted(); % no slicing supported atm
+raw_data_MID347=twix_347.image.unsorted(); % no slicing supported atm
+
+%%
+clc; clear; close all;
+
+% Define polar and azimuthal angles (in radians)
+theta = linspace(0, pi, 10); % Polar angles (0 to pi)
+phi = linspace(0, 2*pi, 20); % Azimuthal angles (0 to 2pi)
+
+% Create a figure
+figure;
+hold on;
+grid on;
+axis equal;
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
+title('3D Lines with Polar and Azimuthal Angles');
+
+% Define line length
+L = 1; % Unit length
+
+% Loop through angles and plot lines
+for t = theta
+    for p = phi
+        % Convert spherical to Cartesian coordinates
+        x = L * sin(t) * cos(p);
+        y = L * sin(t) * sin(p);
+        z = L * cos(t);
+        
+        % Plot line from origin to (x, y, z)
+        plot3([0 x], [0 y], [0 z], 'b', 'LineWidth', 1.5);
+    end
+end
+
+hold off;
