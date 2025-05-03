@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l walltime=8:0:0
+#PBS -lselect=1:ncpus=4:mem=900gb
+
+cd /rds/general/user/ip620/home/mri_fyp/phantom/sequence
+
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
+conda activate fyp
+module purge
+
+python3 get_image_s28.py

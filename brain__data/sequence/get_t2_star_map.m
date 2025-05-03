@@ -108,6 +108,7 @@ mean_non_zero = mean(non_zero_values);
 disp(['Mean of non-zero values in the masked region: ', num2str(mean_non_zero)]);
 
 %%
+sliceNumber = 25;
 data = load("Z:\home\mri_fyp\brain\sequence\short_no_noise.mat");
 
 % Assuming the variable name inside the .mat file is 'image_data'

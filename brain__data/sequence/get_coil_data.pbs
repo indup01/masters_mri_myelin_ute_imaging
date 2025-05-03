@@ -1,0 +1,11 @@
+#!/bin/bash 
+#PBS -l walltime=04:00:00 
+#PBS -lselect=1:ncpus=8:mem=900gb 
+#PBS -N mdcs_job
+
+module load tools/prod
+module load MATLAB/2023a_Update_3
+
+cd /rds/general/user/ip620/home/mri_fyp/brain/sequence
+
+matlab -batch get_coil_data

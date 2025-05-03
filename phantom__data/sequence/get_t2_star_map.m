@@ -27,7 +27,20 @@ end
 
 %%
 slice = t2_star(10:end-10,50:end-15,15:25);
+% slice = t2_star(46:50,64:66,15:25);
 volshow(slice)
 
 %%
 mean(slice,"all")
+%%
+sn = 20;
+slicet2 = squeeze(t2_star(48, 65, sn));
+slicet2_short = squeeze(short_img(48, 65, sn));
+
+imagesc(abs(slicet2));
+imagesc(abs(slicet2_short));
+volshow(short_img(46:50,64:66,15:25))
+
+%%
+mean(slicet2,"all")
+volshow(t2_star)
