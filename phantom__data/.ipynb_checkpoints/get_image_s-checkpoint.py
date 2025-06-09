@@ -23,7 +23,7 @@ print(im_size,grid_size)
 
 # In[38]:
 
-for x in range (10,20):
+for x in range (1,10):
     
     # Load the .mat file
     coil_data = scipy.io.loadmat(f's_te/s_te_coil_{x}.mat')
