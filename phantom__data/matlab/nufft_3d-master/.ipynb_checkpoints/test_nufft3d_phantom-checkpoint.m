@@ -18,6 +18,7 @@ om=permute(om,[3 1 2]);
 save('om.mat', 'om')
 
 %% create nufft object (gpu=0 CPU, gpu=1 gpuSparse, gpu=2 gpuArray)
+N = 96;
 obj = nufft_3d(om,N,'gpu',1);
 
 %% generate data (forward transform)
